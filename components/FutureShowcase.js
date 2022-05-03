@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import theme from '../theme.js'
 import mainAlbumCover from '../assets/ineverlikedyoucover.jpeg'
 
-import OpenURLButton from './components/OpenURLButton';
+import OpenURLButton from '../components/OpenURLButton';
 
 const supportedURL = "https://music.apple.com/us/album/i-never-liked-you/1621119097";
 const unsupportedURL = "slack://open?team=123456";
@@ -11,7 +11,7 @@ const unsupportedURL = "slack://open?team=123456";
 
 export default function FutureShowcase() {
   return (
-    <View>
+    <View style={styles.showcaseContainer}>
       <Text style={styles.mainTitle}>I NEVER LIKED YOU</Text>
       <Text style={styles.subtitle}>OUT NOW</Text>
       <Image source={mainAlbumCover} style={styles.mainImage} />
@@ -21,6 +21,11 @@ export default function FutureShowcase() {
 }
 
 const styles = StyleSheet.create({
+  showcaseContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   mainTitle: {
     color: theme.colors.textPrimary,
     fontWeight: "bold",
