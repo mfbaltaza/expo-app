@@ -1,16 +1,24 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
 import Homescreen from "./Homescreen";
 import FutureShowcase from "./FutureShowcase";
 import AppTopBar from "./AppTopBar";
+import { Switch, Route, Redirect } from "react-router-native";
 
-export default function Main() {
+function Main() {
   return (
-    <View style={ styles.container }>
+    <View style={styles.container}>
       <AppTopBar />
-      <Homescreen />
-      {/* <FutureShowcase /> */}
+      <Switch>
+        <Route path="/" exact>
+          <Homescreen />
+        </Route>
+        <Route path="/future" exact>
+          <FutureShowcase />
+        </Route>
+        <Redirect to="/"></Redirect>
+      </Switch>
       <StatusBar style="light" />
     </View>
   );
@@ -19,6 +27,8 @@ export default function Main() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#111111"
+    backgroundColor: "#111111",
   },
 });
+
+export default Main;

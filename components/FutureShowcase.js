@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import theme from '../theme.js'
 import mainAlbumCover from '../assets/ineverlikedyoucover.jpeg'
+import Constants from "expo-constants";
 
 import OpenURLButton from '../components/OpenURLButton';
 
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: Constants.statusBarHeight + 10
   },
   mainTitle: {
     color: theme.colors.textPrimary,
