@@ -1,6 +1,7 @@
 const theme = {
   colors: {
-    textPrimary: '#fefefe'
+    textPrimary: '#fefefe',
+    black: "#111111"
   },
   fontSizes: {
     body: 14,
