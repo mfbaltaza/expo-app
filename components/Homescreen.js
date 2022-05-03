@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from "react-native";
 import theme from '../theme';
 import { Route } from "react-router-native";
-
+import Constants from "expo-constants";
 
 function Homescreen() {
   return (
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: Constants.statusBarHeight
   },
   mainScreenText: {
     fontSize: theme.fontSizes.mainHeading,

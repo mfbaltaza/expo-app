@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: Constants.statusBarHeight + 10
+    marginBottom: Constants.statusBarHeight
   },
   mainTitle: {
     color: theme.colors.textPrimary,
