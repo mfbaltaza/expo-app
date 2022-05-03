@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import theme from '../theme.js'
 import mainAlbumCover from '../assets/ineverlikedyoucover.jpeg'
 
 import OpenURLButton from './components/OpenURLButton';
@@ -21,9 +22,9 @@ export default function FutureShowcase() {
 
 const styles = StyleSheet.create({
   mainTitle: {
-    color: '#fefefe',
+    color: theme.colors.textPrimary,
     fontWeight: "bold",
-    fontSize: 28
+    fontSize: theme.fontSizes.mainHeading
   },
   subtitle: {
     fontSize: 14,
