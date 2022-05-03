@@ -4,7 +4,10 @@ import Constants from "expo-constants";
 import theme from "../theme";
 import { Link, useLocation } from "react-router-native";
 
-const SectionTab = ({ active, children, to }) => {
+const SectionTab = ({ children, to }) => {
+  const { pathname } = useLocation()
+  const active = pathname === to
+
   const textStyles = [
     styles.text, active && styles.active
   ]
@@ -19,14 +22,12 @@ const SectionTab = ({ active, children, to }) => {
 };
 
 const AppTopBar = () => {
-  const { pathname } = useLocation()
-
   return (
     <View style={styles.container}>
-      <SectionTab active={ pathname === '/' } to="/">
+      <SectionTab to="/">
         Home
       </SectionTab>
-      <SectionTab active={ pathname === '/future' } to="/future">
+      <SectionTab to="/future">
         Showcase
       </SectionTab>
     </View>
