@@ -2,26 +2,32 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import theme from "../theme";
-import { Link } from "react-router-native";
+import { Link, useLocation } from "react-router-native";
 
 const SectionTab = ({ active, children, to }) => {
+  const textStyles = [
+    styles.text, active && styles.active
+  ]
+
   return (
     <Link to={to}>
       <View style={styles.container}>
-        <Text style={styles.text}> {children} </Text>
+        <Text style={textStyles}> {children} </Text>
       </View>
     </Link>
   );
 };
 
-function AppTopBar() {
+const AppTopBar = () => {
+  const { pathname } = useLocation()
+
   return (
     <View style={styles.container}>
-      <SectionTab active to="/">
+      <SectionTab active={ pathname === '/' } to="/">
         Home
       </SectionTab>
-      <SectionTab active to="/future">
-        Showcase of the week
+      <SectionTab active={ pathname === '/future' } to="/future">
+        Showcase
       </SectionTab>
     </View>
   );
@@ -38,6 +44,9 @@ const styles = StyleSheet.create({
   text: {
     color: theme.colors.textPrimary,
   },
+  active: {
+    color: theme.colors.mainRed
+  }
 });
 
 export default AppTopBar;
